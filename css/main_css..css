@@ -1,0 +1,609 @@
+
+/* ===============================================> help css here  */
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+*{margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+:root{
+/* ===============> stock font here*/
+--Nunito-Sans-main-font: "Nunito Sans", sans-serif;
+
+/* ===============> stock color here*/
+--brand-Color-Name: #00A3C4;
+--secend-color-Blue-Violet: #8839F6; 
+--bg-Ghost-White:#F6FAFF; 
+--footer-2nd-black-color: #343A40;
+--footer-main-black-color: #2F353A;
+--text-gry-color: #666669;
+
+}
+
+.container{
+    max-width: 1150px;
+}
+body{
+    /* font-family: var(--Didact-Gothic-2nd-font); */
+    font-family: "Nunito Sans", sans-serif;
+    transition: all 0.3s ease;
+}
+p{font-size: 15px; font-weight: 400;}
+
+ul, li{list-style: none;}
+
+a{text-decoration: none; color: var(--rich-black-color);}
+
+h1, h2, h3, h4, h5, h6{ font-family: var(--Oswald-main-font); font-weight: 400 !important; letter-spacing: 1px; margin:0; text-transform: capitalize; letter-spacing: 2px;}
+
+h1{  font-size: clamp(25px, 8vw, 70px);}
+
+h2{  font-size: clamp(10px, 7vw, 35px); font-weight:500!important;}
+
+h3{ font-size: clamp(7px, 5vw, 20px);}
+
+h4{font-size: clamp(8px, 5vw, 18px);}
+
+img{width: 100%;}
+
+/* ===============================================> HELP CSS ENDS HERE  */
+
+
+
+
+
+/* ===============================================> header and nvbar  
+---------------------------------------------------------------*/
+/* .bg-cover{
+    background-image: url(../image/hero-2-overlay.png);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+} */
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.5s ease-in;
+    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+}
+
+/* -----------------------------> brand logo  */
+
+header .brand-logo a{
+    color: var(--secend-color-Blue-Violet);
+    font-weight: 800 !important;
+}
+
+/* -----------------------------> menu items  */
+header .navbar_here{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: relative; */
+}
+nav ul{
+    display: flex;
+    align-items: center;
+}
+nav ul li a{
+    font-family: var(--Oswald-main-font);
+    letter-spacing: 1px;
+    color: var(--brand-color-dark-green);
+    display: block;
+    position: relative;
+    padding-bottom: 2px;
+    position: relative;
+    font-size: 17px;
+    transition: all 0.5s ease;
+}
+nav ul li .active{
+    color: var(--secend-color-Blue-Violet);
+}
+nav ul li a:hover{
+    color: var(--secend-color-Blue-Violet);
+}
+
+
+/* -----------------------------> menu items animation  */
+nav ul li a::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    /* height: 100%; */
+    height: 2px;
+    background-color: var(--secend-color-Blue-Violet);
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform  0.2s ease-in;
+    /* z-index: -1; */
+}
+nav ul li a:hover::before{
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+
+/* -----------------------------> some custom css menu buttom design  */
+header .menu-btn .btn{
+    background-color: var(--brand-Color-Name);
+    transition: all .5s ease;
+}
+
+header .menu-btn .btn:hover{
+    background-color: var(--secend-color-Blue-Violet);
+}
+
+
+/* -----------------------------> hamburger  css  */
+header .hamburger{
+    cursor: pointer;
+    padding: 4px 7px;
+    display: none;
+}
+.hamburger .bar{
+    width: 30px;
+    height: 2px;
+    background-color: #010304;
+    margin: 7px 0;
+    transition: all 0.5s ease-in-out;
+}
+.hamburger_open .bar:nth-child(1){
+    transform: translateY(11px) rotate(45deg);
+}
+.hamburger_open .bar:nth-child(2){
+    opacity: 0;
+}
+.hamburger_open .bar:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* -----------------------------> header sticky here css  */
+header.sticky{
+    background-color: #FFF;
+    padding: 8px 0;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+}
+
+
+/* ---------------------------------------------------------------
+===============================================> header ends nvbar  */
+
+
+
+
+/* ===============================================> hero section starts here  
+--------------------------------------------------------------------------*/
+
+/* ===================> hero section cnt here */
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.hero-section-cnt-info{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+}
+
+@media (max-width:900px){
+    .hero-section-cnt-info{
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+    }
+}
+
+
+
+.hero-section-image img{
+    width: 100%;
+}
+
+.hero-section-text h2{
+    font-family: var(--Oswald-main-font);
+    color: var(--white-color);
+    letter-spacing: 5px;
+}
+.hero-section-text p{
+    font-family: var(--Didact-Gothic-2nd-font);
+    color: var(--white-color);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+/* =========================> hero section button here */
+.hero-section-text .btn{
+    background-color: #00A3C4;
+    transition: all 0.5s ease-in;
+}
+.hero-section-text .btn:hover{
+    background-color: var(--secend-color-Blue-Violet);
+}
+
+/* ---------------------------------------------------------------------
+===============================================> hero section ends here  */
+
+
+
+
+
+/* ===============================================> digital starts here  
+--------------------------------------------------------------------------*/
+
+.digital-card{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-Ghost-White);
+    display: flex;
+    align-items: center;
+}
+.digital-text{
+    padding: 0 100px;
+    color: var(--text-gry-color);
+}
+@media (max-width:900px){
+    .digital-text{
+       padding: 0 10px; 
+    }
+}
+
+
+
+
+.digital-four-card p{
+    color: var(--text-gry-color);
+}
+
+/* ---------------------------------------------------------------------
+===============================================>  digital ends here */
+
+
+
+
+
+/* ===============================================> Features starts here  
+--------------------------------------------------------------------------*/
+.Features{
+    width: 100%;
+    height: 100vh;
+    padding: 300px 0px;
+    /* background-color: red; */
+}
+
+
+.features-1st-cnt-icnon-li i{
+    background-color: var(--brand-Color-Name);
+}
+
+/* ---------------------------------------------------------------------
+===============================================> Features ends here */
+
+
+
+
+
+/* ===============================================> Improve starts here  
+--------------------------------------------------------------------------*/
+.Improve-cnt-text a,
+.features-1st-cnt a{
+    color: var(--secend-color-Blue-Violet);
+}
+
+.Improve-cnt-image img{
+    width: 100%;
+}
+
+.Improve-cnt{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+}
+
+@media (max-width:900px){
+    .Improve-cnt{
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+
+/* ---------------------------------------------------------------------
+===============================================> Improve ends here */
+
+
+
+
+
+
+
+
+
+/* ===============================================> Satisfied starts here  
+--------------------------------------------------------------------------*/
+
+.Satisfied-Clients{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.Satisfied-Clients-1st-cnt p{
+    color: var(--text-gry-color);
+}
+.Satisfied-Clients-2st-cnt{
+    position: relative;
+}
+.item-client-sign h4{
+    font-size: 17px;
+}
+.item-client-sign h5{
+    font-size: 12px;
+}
+.item{
+    background-color: var(--bg-Ghost-White);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+/* ---------------------------------> owl carosul dot */
+
+.owl-theme .owl-dots {
+	display: block;
+    transition: all 0.5s ease;
+}
+.owl-theme .owl-dots span{
+    margin-top: 10px !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+	background-color: #00a3c49a;
+    transition: all 0.5s ease;
+}
+
+/* ------------------> owl carosul nav or icon here icon buttom */
+.owl-theme .owl-nav {
+	margin: 0 !important;
+
+}
+.owl-theme .owl-nav button{
+    border: none !important;
+    outline: none !important;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: -50px;
+    right: 0;
+    outline: 0 !important;
+    border: none !important;
+    margin-top: 50px !important;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+	background: transparent;
+}
+
+.owl-theme .owl-nav button span{
+	padding: 0px 14px;
+	background-color: var(--brand-Color-Name);
+	border-radius: 50px;
+    font-size: 25px;
+    color: white;
+    transition: all 0.3s ease;
+}
+.owl-theme .owl-nav button span:hover{
+    background-color: var(--secend-color-Blue-Violet);
+}
+
+.owl-prev{
+    margin-right: 50px !important;
+}
+
+/* ---------------------------------------------------------------------
+===============================================> Satisfied ends here */
+
+
+
+
+
+
+
+/* ===============================================> four logo css starts here  
+--------------------------------------------------------------------------*/
+.four-logo-cnt img{
+    width: 190px;
+    height: auto;
+    object-fit: contain;
+    margin: 15px 0;
+}
+
+/* ---------------------------------------------------------------------
+===============================================> four logo css ends here */
+
+
+
+
+
+
+/* ===============================================> build dream css starts here  
+--------------------------------------------------------------------------*/
+.Build-dream{
+    background-color: var(--secend-color-Blue-Violet);
+    padding: 50px 0;
+}
+.Build-dream-text p{
+    color: #ddd;
+}
+.Build-dream .btn{
+    background-color: var(--brand-Color-Name) !important;
+}
+/* ---------------------------------------------------------------------
+===============================================> build dream css ends here */
+
+
+
+
+/* ===============================================> pricing table css starts here  
+--------------------------------------------------------------------------*/
+#plans{
+    /* background-color: #00A3C4; */
+    padding: 100px 0;
+}
+
+.prccing-table-cnt{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+@media (max-width:900px){
+    .prccing-table-cnt{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width:500px){
+    .prccing-table-cnt{
+        grid-template-columns: auto;
+    }
+}
+
+
+.prccing-table-one{
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    cursor: pointer;
+}
+/* ---------------------------------------------------------------------
+===============================================> pricing table css ends here */
+
+
+
+
+
+
+
+/* ===============================================> accordion css starts here  
+--------------------------------------------------------------------------*/
+.Accordion-Bootstrap-custom{
+    /* background-color: red; */
+    padding: 200px 0;
+}
+.accordion-item{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* background-color: red !important; */
+    border: none !important;
+}
+.accordion-item button{
+    color: var(--brand-Color-Name);
+    letter-spacing: 1px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* font-family: var(--Oswald-main-font); */
+    font-weight: 300;
+}
+.accordion-button{
+    background-color: #ffffff !important;
+}
+.accordion-body{
+    background-color: #f7fcff;
+}
+/* .accordion-body p{
+    font-family: var(--Didact-Gothic-2nd-font);
+    color: #000;
+} */
+.accordion-button:focus {
+	box-shadow: none;
+    color: var(--secend-color-Blue-Violet);
+}
+/* ---------------------------------------------------------------------
+===============================================> accordion css ends here */
+
+
+
+
+
+
+
+.contact-form{
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-Ghost-White);
+}
+
+.contact-form-cnt{
+    background-color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    /* margin-top: -200px; */
+}
+
+@media (max-width:900px){
+    .contact-form-cnt{
+        box-shadow: none !important;
+        background-color: transparent;
+    }
+}
+
+.contact-cnt{
+    /* background-color: #f1f0f0; */
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+    padding: 3rem;
+    /* position: relative; */
+}
+
+/* =============> contact-form input here  */
+
+input,
+textarea{
+    border: 1px solid #00A3C4;
+
+}
+
+/* =============> floating bg  */
+.form-floating > .form-control-plaintext ~ label::after,
+.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-select ~ label::after {
+	background-color: transparent;
+    
+}
+
+/* .contact-cnt rsponseive here  */
+@media (max-width:900px){
+    .contact-cnt{
+        box-shadow: none;
+        transition: all 0.5s ease-in-out;
+        padding: 1rem;
+    }
+}
+
+.form-control:focus{     /* focus means click */
+    outline: 0 !important;
+	box-shadow: none;
+    transition: all 0.5s ease-in-out;
+    /* border-bottom: 1px solid .000 !important; */
+}
+
+
+
+
+.secend-footer{
+    padding: 100px 0;
+    background-color: #343A40;
+}
+footer{
+    background-color: #2F353A;
+}
